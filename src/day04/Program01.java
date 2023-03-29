@@ -16,9 +16,11 @@ driver.get("https://demo.guru99.com/test/simple_context_menu.html");
 
 
 Actions action = new Actions(driver);
-WebElement btn= driver.findElement(By.xpath("//span[text()='right click me']"));
-WebElement cpy= driver.findElement(By.xpath("//span[text()='Copy']"));
-action.contextClick(btn).click (cpy).build().perform();
+WebElement btn= driver.findElement(By.xpath(("//button[text()='Double-Click Me To See Alert']")));
+
+
+
+action.doubleClick(btn).build().perform();
 	}
 
 }
