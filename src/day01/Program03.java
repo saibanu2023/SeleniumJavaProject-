@@ -6,6 +6,7 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,9 @@ public class Program03 {
 		driver.get("https://demo.automationtesting.in/Register.html");
 		driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Test");
 		screenshot("firstName");
+		File srcFN=driver.findElement(By.xpath("//input[@placeholder='First Name']")).getScreenshotAs(OutputType.FILE);
+		File desFN = new File("./screenshot/firstnameElement.png");
+		FileUtils.copyFile(srcFN, desFN);
 		driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("Java");
 		screenshot("lastName");
 		driver.findElement(By.xpath("//textarea[@ng-model='Adress']")).sendKeys("Chennai");
