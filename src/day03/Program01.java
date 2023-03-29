@@ -14,14 +14,7 @@ public class Program01 {
 		driver.get("https://demo.guru99.com/test/drag_drop.html");
 		
 		
-		WebElement src = driver.findElement(By.xpath("//li[@id='credit2']"));
+		WebElement src1 = driver.findElement(By.xpath("//li[@id='credit2']"));
 				
-		WebElement target = driver.findElement(By.xpath("//ol[@id='bank']"));
-		
-		Actions action= new Actions(driver);
-		action.dragAndDrop(src, target).build().perform();
-		
-
-	}
-
-}
+		WebElement target1 = driver.findElement(By.xpath("//ol[@id='bank']"));
+	
